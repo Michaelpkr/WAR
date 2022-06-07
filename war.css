@@ -1,3 +1,10 @@
+h1{
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:600;
+}
+
 section {
     display: flex;
+    flex-direction: row;
 }
