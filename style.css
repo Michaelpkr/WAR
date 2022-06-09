@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+h1 {
+  border: 1px solid black;
+  text-align: center;
+}
+
+section {
+  text-align: center;
+}
+
+.board {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+  border: 2px solid pink;
+}
+
+.board > div {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+
+  border: 2px solid blue;
+}
+
+.board > div > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: auto;
+}

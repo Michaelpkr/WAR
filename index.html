@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="war.css">
-    <title>Play War</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <title>Play War</title>
 </head>
-
 <body>
-    <h1>WAR</h1>
-    <section class="players">
-        <h2>Player</h2>
-        <h2>Computer</h2>
-    </section>
-    <section class="cards">
-        <img src="" alt="" id="playerCard">
-        <img src="" alt="" id="computerCard">
-    </section>
-    <section class="actions">
-        <button id="createDeck">Create New Deck</button>
-        <button id="drawTwoCards">Draw</button>
-    </section>
-    <section class="info">
-        <h3 id="gameResult"></h3>
-        <h3 id="cardsRemaining"></h3>
-    </section>
-    <script src="war.js"></script>
+  <h1>WAR</h1>
+  <section>
+    <p>
+      Computer
+    </p>
+  </section>
+  <section class="board">
+    <div>
+      <img id="computer" src="" alt="">
+    </div>
+    <div>
+      <img id="player" src="" alt="">
+    </div>
+  </section>
+  <section>
+    <p>
+      Player
+    </p>
+  </section>
+  <section>
+    <button>
+      Start Game
+    </button>
+    <button>
+      Draw Card
+    </button>
+  </section>
 </body>
-
 </html>
