@@ -20,16 +20,14 @@ let computer = {
 async function startGame(){
   data = await getNewDeck()
   deck.id = data.deck_id
-
   console.log("Game Started", deck)
   // TODO: reset game
 }
 
 async function drawCards(count = 2){
-  let DECK_OF_CARDS_URL = `https://deckofcardsapi.com/api/deck/${deck.id}/draw/?count=${count}`
-  const data = await fetch(
-    DECK_OF_CARDS_URL
-  ).then(res => res.json())
+  const DECK_OF_CARDS_URL = `https://deckofcardsapi.com/api/deck/${deck.id}/draw/?count=${count}`
+  const data = await fetch(DECK_OF_CARDS_URL)
+  .then(res => res.json())
   data.cards.forEach((card, index) => {
     if (index == 0 || index % 2 == 0) {
       player.hand.push(card)
@@ -37,16 +35,13 @@ async function drawCards(count = 2){
       computer.hand.push(card)
     }
   })
-
   showHands(player, computer)
 }
 
 async function getNewDeck(count = 1){
-  let DECK_OF_CARDS_URL = `https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=${count}`
-  const data = await fetch(
-    DECK_OF_CARDS_URL
-  ).then(res => res.json())
-
+  const DECK_OF_CARDS_URL = `https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=${count}`
+  const data = await fetch(DECK_OF_CARDS_URL)
+  .then(res => res.json())
   return data
 }
 
@@ -55,7 +50,6 @@ function showHands(player, computer){
   const computerImage = document.getElementById('computer')
   playerImage.setAttribute('src', player.hand.at(-1).images.svg)
   computerImage.setAttribute('src', computer.hand.at(-1).images.svg)
-
   calculateRoundWinner(player, computer)
 }
 
